@@ -16,7 +16,14 @@ class DepthCalculator {
   calculateDepth(arr) {
     // throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
-
+    let count = 1;
+    let maxDepth = 0
+    for (const elem of arr) {
+      if (Array.isArray(elem)) {
+        maxDepth = Math.max(this.calculateDepth(elem), maxDepth);
+      }
+    }
+    return count + maxDepth;
   }
 }
 
