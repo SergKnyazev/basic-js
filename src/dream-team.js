@@ -26,7 +26,7 @@ function createDreamTeam(members) {
   }
 
   Array.isArray(members) && getLettersFromName();
-
+  if (lettersFromName === '') return false;
   return lettersFromName.toUpperCase().split('').sort().join('')
 }
 
